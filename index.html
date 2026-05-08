@@ -732,19 +732,20 @@
         </div>
       </div>
       <div class="contact-right">
-        <form
+        <!-- modify this form HTML and place wherever you want your form -->
+<form
   action="https://formspree.io/f/xojrnzjw"
   method="POST"
+  enctype="multipart/form-data"
 >
   <label>
     Your email:
     <input type="email" name="email">
   </label>
   <label>
-    Your message:
-    <textarea name="message"></textarea>
+    Your file:
+    <input type="file" name="upload">
   </label>
-  <!-- your other form fields go here -->
   <button type="submit">Send</button>
 </form>
       </div>
