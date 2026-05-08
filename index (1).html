@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shivangi Shukla — Analyst | DS & ML</title>
+  <meta name="description" content="Shivangi Shukla — Data Analyst & ML Builder. Projects in healthcare AI, forecasting, and recommendation systems. Open to internships and opportunities.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0c0c0e;
+      --bg2: #131316;
+      --bg3: #1a1a1f;
+      --border: rgba(255,255,255,0.07);
+      --border2: rgba(255,255,255,0.12);
+      --text: #f0ede8;
+      --muted: #888580;
+      --accent: #c8f04e;
+      --accent2: #7ee8c8;
+      --serif: 'DM Serif Display', serif;
+      --mono: 'DM Mono', monospace;
+      --sans: 'Outfit', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 15px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(12,12,14,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+      padding: 0 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 52px;
+    }
+    .nav-logo {
+      font-family: var(--mono);
+      font-size: 13px;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      text-decoration: none;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-badge {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: rgba(200,240,78,0.12);
+      color: var(--accent);
+      border: 0.5px solid rgba(200,240,78,0.3);
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 2.5rem 2rem;
+      gap: 2rem;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent2);
+      border: 0.5px solid rgba(126,232,200,0.25);
+      padding: 5px 12px;
+      border-radius: 20px;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.06em;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent2);
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      line-height: 1.08;
+      color: var(--text);
+      margin-bottom: 1rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+    .hero-desc {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+      max-width: 400px;
+      margin-bottom: 1.5rem;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn-primary {
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 500;
+      background: var(--accent);
+      color: #0c0c0e;
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: opacity 0.2s;
+      display: inline-block;
+    }
+    .btn-primary:hover { opacity: 0.85; }
+    .btn-secondary {
+      font-family: var(--sans);
+      font-size: 13px;
+      background: transparent;
+      color: var(--text);
+      padding: 9px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 0.5px solid var(--border2);
+      cursor: pointer;
+      transition: background 0.2s;
+      display: inline-block;
+    }
+    .btn-secondary:hover { background: rgba(255,255,255,0.04); }
+
+    /* Terminal */
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .terminal {
+      background: var(--bg2);
+      border: 0.5px solid var(--border2);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .terminal-bar {
+      background: var(--bg3);
+      padding: 8px 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; }
+    .dot-r { background: #ff5f57; }
+    .dot-y { background: #febc2e; }
+    .dot-g { background: #28c840; }
+    .terminal-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-left: 8px;
+    }
+    .terminal-body {
+      padding: 1rem 1.2rem;
+      font-family: var(--mono);
+      font-size: 12px;
+      line-height: 1.85;
+    }
+    .t-comment { color: #555; }
+    .t-key { color: var(--accent2); }
+    .t-str { color: #e8c678; }
+    .t-num { color: var(--accent); }
+    .t-bool { color: #c78bff; }
+    .t-val { color: var(--text); }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .stat-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem;
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .stat-card:hover { border-color: var(--border2); }
+    .stat-num {
+      font-family: var(--mono);
+      font-size: 22px;
+      font-weight: 500;
+      color: var(--accent);
+      display: block;
+    }
+    .stat-label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ── DIVIDER ── */
+    .divider {
+      border: none;
+      border-top: 0.5px solid var(--border);
+      margin: 0 2rem;
+    }
+
+    /* ── SECTIONS ── */
+    section {
+      padding: 2.5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+      margin-bottom: 0.4rem;
+      line-height: 1.15;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 1.8rem;
+      max-width: 500px;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .project-card {
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover {
+      border-color: var(--border2);
+      transform: translateY(-2px);
+    }
+    .project-card.featured {
+      grid-column: span 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 2rem;
+      align-items: center;
+      border-color: rgba(200,240,78,0.2);
+    }
+    .project-type {
+      font-family: var(--mono);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .project-name {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      line-height: 1.2;
+      margin-bottom: 2px;
+    }
+    .project-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.6;
+      flex: 1;
+    }
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .tag {
+      font-family: var(--mono);
+      font-size: 10px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(255,255,255,0.05);
+      color: var(--muted);
+      border: 0.5px solid var(--border);
+    }
+    .project-arrow {
+      font-size: 16px;
+      color: var(--muted);
+      align-self: flex-start;
+      margin-left: auto;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .project-card:hover .project-arrow {
+      color: var(--accent);
+      transform: translate(2px, -2px);
+    }
+    .project-accuracy {
+      font-family: var(--mono);
+      font-size: 3rem;
+      font-weight: 500;
+      color: var(--accent);
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .project-accuracy-label {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* ── SKILLS ── */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .skill-group-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent2);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+    .skill-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .skill-pill {
+      font-family: var(--mono);
+      font-size: 12px;
+      padding: 5px 11px;
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .skill-pill:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ── CONTACT ── */
+    .contact-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    .contact-left h2 {
+      font-family: var(--serif);
+      font-size: 2rem;
+      margin-bottom: 0.75rem;
+    }
+    .contact-left p {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      padding: 9px 14px;
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .contact-link:hover {
+      border-color: var(--border2);
+      color: var(--text);
+    }
+    .contact-link-icon {
+      font-size: 13px;
+      font-family: var(--mono);
+    }
+    .contact-link.email {
+      border-color: rgba(200,240,78,0.25);
+      color: var(--accent);
+    }
+
+    /* Form */
+    .form-group { margin-bottom: 0.85rem; }
+    .form-label {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      margin-bottom: 5px;
+    }
+    .form-input,
+    .form-textarea {
+      width: 100%;
+      background: var(--bg2);
+      border: 0.5px solid var(--border);
+      color: var(--text);
+      font-family: var(--sans);
+      font-size: 14px;
+      padding: 9px 13px;
+      border-radius: 6px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-input:focus,
+    .form-textarea:focus { border-color: var(--accent); }
+    .form-textarea { resize: vertical; min-height: 90px; }
+    .form-submit {
+      width: 100%;
+      background: var(--accent);
+      color: #0c0c0e;
+      border: none;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 4px;
+      transition: opacity 0.2s;
+    }
+    .form-submit:hover { opacity: 0.85; }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 1.25rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .footer-logo {
+      font-family: var(--mono);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1rem; }
+      .nav-links { display: none; }
+      .hero { grid-template-columns: 1fr; padding: 1.5rem 1rem; }
+      .hero-right { display: none; }
+      .hero h1 { font-size: 2.2rem; }
+      section { padding: 2rem 1rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+      .project-accuracy { font-size: 2rem; }
+      .skills-layout { grid-template-columns: 1fr; }
+      .contact-layout { grid-template-columns: 1fr; gap: 2rem; }
+      .divider { margin: 0 1rem; }
+      footer { padding: 1rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">SS_</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <span class="nav-badge">Open to work</span>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero" id="about">
+    <div class="hero-left">
+      <div class="hero-tag">Analyst · DS & ML · FinTech track</div>
+      <h1>Building with<br><em>Data</em> &<br>Machine Learning</h1>
+      <p class="hero-desc">
+        Actively building projects in ML, AI, and predictive analytics — from healthcare classification to demand forecasting. Expanding into quantitative finance.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="https://github.com/shivangishuklaa" target="_blank" rel="noopener" class="btn-secondary">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="terminal">
+        <div class="terminal-bar">
+          <div class="dot dot-r"></div>
+          <div class="dot dot-y"></div>
+          <div class="dot dot-g"></div>
+          <span class="terminal-title">shivangi_profile.json</span>
+        </div>
+        <div class="terminal-body">
+          <div class="t-comment"># analyst profile</div>
+          <div><span class="t-key">name</span>: <span class="t-str">"Shivangi Shukla"</span></div>
+          <div><span class="t-key">role</span>: <span class="t-str">"Data Analyst & ML Builder"</span></div>
+          <div><span class="t-key">focus</span>: <span class="t-str">"Healthcare · Forecasting · FinTech"</span></div>
+          <div><span class="t-key">best_accuracy</span>: <span class="t-num">~99%</span></div>
+          <div><span class="t-key">projects</span>: <span class="t-num">5</span><span class="t-val">+ shipped</span></div>
+          <div><span class="t-key">email</span>: <span class="t-str">"me@shivangishukla.tech"</span></div>
+          <div><span class="t-key">status</span>: <span class="t-bool">available</span></div>
+        </div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card">
+          <span class="stat-num">5+</span>
+          <div class="stat-label">ML projects</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">~99%</span>
+          <div class="stat-label">Best accuracy</div>
+        </div>
+        <div class="stat-card">
+          <span class="stat-num">4+</span>
+          <div class="stat-label">Algo families</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-tag">02 — Selected Work</div>
+    <h2 class="section-title">Projects that ship</h2>
+    <p class="section-sub">End-to-end ML pipelines: from raw data to evaluated models.</p>
+
+    <div class="projects-grid">
+
+      <!-- Featured -->
+      <a href="https://github.com/shivangishuklaa/Chronic-Kidney-Disease-Classification-" target="_blank" rel="noopener" class="project-card featured">
+        <div>
+          <div class="project-type">Healthcare AI · Classification</div>
+          <div class="project-name">Chronic Kidney Disease Classifier</div>
+          <p class="project-desc">ML-based early detection for CKD. Random Forest delivered best-in-class results. Key predictors: serum creatinine, hemoglobin, BP, and albumin.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">scikit-learn</span>
+            <span class="tag">Random Forest</span>
+            <span class="tag">EDA</span>
+            <span class="tag">Label Encoding</span>
+          </div>
+        </div>
+        <div style="text-align:right; padding-left:1rem;">
+          <div class="project-accuracy">~99%</div>
+          <div class="project-accuracy-label">Model accuracy</div>
+          <div style="margin-top:1rem;" class="project-arrow">↗</div>
+        </div>
+      </a>
+
+      <a href="https://github.com/shivangishuklaa/NYC-Taxi-Demand-Predictor" target="_blank" rel="noopener" class="project-card">
+        <div class="project-type">Forecasting · Time Series</div>
+        <div class="project-name">NYC Taxi Demand Predictor</div>
+        <p class="project-desc">Time-series forecasting for NYC taxi trips — smarter fleet allocation and route optimization across boroughs.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pandas</span>
+          <span class="tag">Time Series</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </a>
+
+      <a href="https://github.com/shivangishuklaa/Recommender-System" target="_blank" rel="noopener" class="project-card">
+        <div class="project-type">Recommendation · Collaborative Filtering</div>
+        <div class="project-name">Recommender System</div>
+        <p class="project-desc">Personalized suggestions via collaborative filtering based on user behavior patterns and item similarity.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Collaborative Filtering</span>
+          <span class="tag">Similarity Metrics</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </a>
+
+      <a href="https://github.com/shivangishuklaa/Salary-Prediction" target="_blank" rel="noopener" class="project-card">
+        <div class="project-type">Regression · HR Analytics</div>
+        <div class="project-name">Salary Prediction Model</div>
+        <p class="project-desc">Regression model predicting salary ranges from job features — for HR analytics and compensation benchmarking.</p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Regression</span>
+          <span class="tag">Feature Engineering</span>
+        </div>
+        <span class="project-arrow">↗</span>
+      </a>
+
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-tag">03 — Tools & Technologies</div>
+    <h2 class="section-title">Tech stack</h2>
+    <p class="section-sub">Full pipeline: exploration, preprocessing, modeling, and visualization.</p>
+
+    <div class="skills-layout">
+      <div>
+        <div class="skill-group-title">Languages & Environments</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Python</span>
+          <span class="skill-pill">SQL</span>
+          <span class="skill-pill">Jupyter</span>
+          <span class="skill-pill">Google Colab</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">ML & Data</div>
+        <div class="skill-pills">
+          <span class="skill-pill">scikit-learn</span>
+          <span class="skill-pill">Pandas</span>
+          <span class="skill-pill">NumPy</span>
+          <span class="skill-pill">Random Forest</span>
+          <span class="skill-pill">Logistic Regression</span>
+          <span class="skill-pill">KNN</span>
+          <span class="skill-pill">Decision Trees</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">Visualization</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Matplotlib</span>
+          <span class="skill-pill">Seaborn</span>
+        </div>
+      </div>
+      <div>
+        <div class="skill-group-title">Dev Tools & Deployment</div>
+        <div class="skill-pills">
+          <span class="skill-pill">Git & GitHub</span>
+          <span class="skill-pill">Streamlit</span>
+          <span class="skill-pill">Flask</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="contact-layout">
+      <div class="contact-left">
+        <div class="section-tag">04 — Get in touch</div>
+        <h2>Let's connect</h2>
+        <p>Open to collaborations, internships, and opportunities in DS, ML, and FinTech. Always happy to talk data or AI × finance.</p>
+        <div class="contact-links">
+          <a href="https://github.com/shivangishuklaa" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">GH</span> github.com/shivangishuklaa
+          </a>
+          <a href="https://linkedin.com/in/shivangishuklaa" target="_blank" rel="noopener" class="contact-link">
+            <span class="contact-link-icon">in</span> linkedin.com/in/shivangishuklaa
+          </a>
+          <a href="mailto:me@shivangishukla.tech" class="contact-link email">
+            <span class="contact-link-icon">@</span> me@shivangishukla.tech
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+          <div class="form-group">
+            <label class="form-label" for="name">Name</label>
+            <input class="form-input" type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email</label>
+            <input class="form-input" type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-textarea" id="message" name="message" placeholder="Tell me about the opportunity..." required></textarea>
+          </div>
+          <button type="submit" class="form-submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <span class="footer-logo">Shivangi._</span>
+    <span class="footer-copy">© 2026 · Analyst | DS & ML</span>
+  </footer>
+
+</body>
+</html>
